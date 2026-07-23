@@ -8,7 +8,9 @@
  * @author Ganta Vikram Jairam Reddy
  */
 
+import Controller.SudokuController;
 import View.SudokuFrame;
+
 import javax.swing.SwingUtilities;
 
 public class Main {
@@ -17,8 +19,7 @@ public class Main {
 
         SwingUtilities.invokeLater(() -> {
 
-            SudokuFrame frame = new SudokuFrame();
-            frame.setVisible(true);
+            new SudokuController(new SudokuFrame());
         });
     }
 }
