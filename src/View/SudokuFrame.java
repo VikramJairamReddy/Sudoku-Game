@@ -21,9 +21,9 @@ public class SudokuFrame extends JFrame {
 
     private JTextField[][] cells;
 
-    JButton solveButton;
-    JButton resetButton;
-    JButton newGameButton;
+    private JButton solveButton;
+    private JButton resetButton;
+    private JButton newGameButton;
 
     /**
      * Creates Sudoku window.
@@ -135,6 +135,24 @@ public class SudokuFrame extends JFrame {
     }
 
     /**
+     * Displays an error message when Sudoku cannot be solved.
+     */
+    public void showError() {
+        JOptionPane.showMessageDialog(this,"No solution exists!");
+    }
+
+    /**
+     * Enables or disables control buttons.
+     *
+     * @param val true to disable buttons, false to enable buttons
+     */
+    public void disableButtons(boolean val) {
+        solveButton.setEnabled(!val);
+        resetButton.setEnabled(!val);
+        newGameButton.setEnabled(!val);
+    }
+
+    /**
      * Returns solve button.
      *
      * @return solve button
@@ -170,5 +188,15 @@ public class SudokuFrame extends JFrame {
      */
     public String getTextAt(int row, int col) {
         return cells[row][col].getText().trim();
+    }
+
+    /**
+     * Sets user entered value from a Sudoku cell.
+     *
+     * @param row row index
+     * @param col column index
+     */
+    public void setTextAt(int row, int col, String text) {
+         cells[row][col].setText(text);
     }
 }
