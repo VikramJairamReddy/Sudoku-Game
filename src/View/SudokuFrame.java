@@ -119,6 +119,12 @@ public class SudokuFrame extends JFrame {
         add(buttonPanel, BorderLayout.SOUTH);
     }
 
+    /**
+    * Sets the appearance of buttons used in the dashboard.
+    *
+    * @param button button whose appearance will be modified
+    * @param color background color of the button
+    */
     private void buttonAppearance(JButton button, Color color) {
         button.setBackground(color);
         button.setForeground(Color.WHITE);
